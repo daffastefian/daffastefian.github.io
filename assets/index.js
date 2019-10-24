@@ -51,3 +51,14 @@ setTimeout(function(){
       $("#work").removeClass("animated fadeIn");
     },1000);
 },1500);
+let myAge = () => {
+  const dt = new Date();
+  if (dt.getMonth() < 1) {
+    return (dt.getFullYear() - 2001 - 1);
+  }else if (dt.getMonth() == 5 && dt.getDate() >= 18) {
+    return (dt.getFullYear() - 2002);
+  }
+  return (dt.getFullYear() - 2001);
+}
+const age = document.getElementById('age');
+age.innerHTML = myAge();
